@@ -1,18 +1,20 @@
-function make_granolas (run_complete_signal, n, a) {
- console.log ("Producing granola " + (n + 1))
+function make_granolas (line, n, a) {
+ console.log ("Granola chef " + (line.index + 1) + " is producing granola " + (n + 1) + ".")
  setTimeout (function () {
   console.log ("Granola " + (n + 1) + " produced.")
-  run_complete_signal ()
+  line.complete ()
  }, Math.random() * 20000 + 5000)
 }
 
-function make_fruit_tarts (run_complete_signal, n, a) {
- console.log ("Producing fruit tart " + (n + 1))
+function make_fruit_tarts (line, n, a) {
+ console.log ("Fruit tart chef " + (line.index + 1) + " is producing fruit tart " + (n + 1) + ".")
  setTimeout (function () {
   console.log ("Fruit tart " + (n + 1) + " produced.")
-  run_complete_signal ()
+  line.complete ()
  }, Math.random() * 10000 + 2500)
 }
+
+//////////
 
 // queue.add (function_name, function, params)
 // queue.complete ()
