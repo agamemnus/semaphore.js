@@ -14,7 +14,7 @@ function AssemblyLine (init) {
   var args =  Array.prototype.slice.call(arguments)
   var run_complete_signal = function () {complete (function_name)}
   args.shift (); args.shift ()
-  args.splice (0, 0, run_complete_signal)
+  args.unshift (run_complete_signal)
   if (run_count[function_name] == max_active) {
    subqueue.push ([function_object, args])
   } else {
