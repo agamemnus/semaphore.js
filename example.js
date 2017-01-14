@@ -3,7 +3,7 @@ function make_granolas (run_complete_signal, n, a) {
  setTimeout (function () {
   console.log ("Granola " + (n + 1) + " produced.")
   run_complete_signal ()
- }, parseInt(Math.random() * 20000 + 5000))
+ }, Math.random() * 20000 + 5000)
 }
 
 function make_fruit_tarts (run_complete_signal, n, a) {
@@ -11,7 +11,7 @@ function make_fruit_tarts (run_complete_signal, n, a) {
  setTimeout (function () {
   console.log ("Fruit tart " + (n + 1) + " produced.")
   run_complete_signal ()
- }, parseInt(Math.random() * 10000 + 2500))
+ }, Math.random() * 10000 + 2500)
 }
 
 // queue.add (function_name, function, params)
