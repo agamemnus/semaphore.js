@@ -1,2 +1,3 @@
 # assembly_line.js
-An "assembly line" function that can be useful for balancing server load in asynchronous node.js calls.
+(TENTATIVE NAME)
+A simple load balancing approach. This "assembly line" function that can be useful for balancing server load when running asynchronous server-intensive node.js calls.
