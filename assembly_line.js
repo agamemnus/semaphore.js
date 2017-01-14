@@ -32,19 +32,3 @@ function AssemblyLine (init) {
   subqueue.shift ()
  }
 }
-
-function make_granolas (line, n, a) {
- console.log ("Producing granola " + (n + 1))
- setTimeout (function () {
-  console.log ("Granola " + (n + 1) + " produced.")
-  line.complete ()
- }, parseInt(Math.random() * 20000 + 5000))
-}
-
-function make_fruit_tarts (line, n, a) {
- console.log ("Producing fruit tart " + (n + 1))
- setTimeout (function () {
-  console.log ("Fruit tart " + (n + 1) + " produced.")
-  line.complete ()
- }, parseInt(Math.random() * 10000 + 2500))
-}
