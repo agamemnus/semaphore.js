@@ -1,16 +1,16 @@
-function make_granolas (assembly_line_complete_signal, n, a) {
+function make_granolas (run_complete_signal, n, a) {
  console.log ("Producing granola " + (n + 1))
  setTimeout (function () {
   console.log ("Granola " + (n + 1) + " produced.")
-  assembly_line_complete_signal ()
+  run_complete_signal ()
  }, parseInt(Math.random() * 20000 + 5000))
 }
 
-function make_fruit_tarts (complete, n, a) {
+function make_fruit_tarts (run_complete_signal, n, a) {
  console.log ("Producing fruit tart " + (n + 1))
  setTimeout (function () {
   console.log ("Fruit tart " + (n + 1) + " produced.")
-  assembly_line_complete_signal ()
+  run_complete_signal ()
  }, parseInt(Math.random() * 10000 + 2500))
 }
 
