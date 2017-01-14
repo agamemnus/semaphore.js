@@ -3,7 +3,7 @@ function AssemblyLine (init) {
  var assembly_line = this
  var queue = {}
  var run_count = {}
- assembly_line.add = function (function_name, function_object) {add (function_name, function_object)}
+ assembly_line.add = function () {add.apply(null, arguments)}
  
  function add (function_name, function_object) {
   if (typeof queue[function_name] == "undefined") {queue[function_name] = []; run_count[function_name] = 0}
@@ -12,9 +12,9 @@ function AssemblyLine (init) {
   // Is the run count at the max active count? If so, add the function to the queue.
   // Otherwise, run it.
   var args =  Array.prototype.slice.call(arguments)
-  var complete_function = function () {complete (function_name)}
+  var run_complete_signal = function () {complete (function_name)}
   args.shift (); args.shift ()
-  args.splice (0, 0, complete_function)
+  args.splice (0, 0, run_complete_signal)
   if (run_count[function_name] == max_active) {
    subqueue.push ([function_object, args])
   } else {
