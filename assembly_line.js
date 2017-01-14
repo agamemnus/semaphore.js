@@ -24,7 +24,7 @@ function AssemblyLine (init) {
  }
  
  function complete (function_name) {
-  run_count -= 1
+  run_count[function_name] -= 1
   var subqueue = queue[function_name]; if (subqueue.length == 0) return
   var function_object = subqueue[0][0]
   var args            = subqueue[0][1]
