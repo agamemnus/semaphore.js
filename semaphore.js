@@ -13,10 +13,9 @@ function Semaphore (init) {
   // Is the run count at the max active count? If so, add the function to the queue.
   // Otherwise, run it.
   var args =  Array.prototype.slice.call(arguments)
-  var line = {complete: function () {complete (this, function_name)}}
+  var semaphore_fragment = {complete: function () {complete (this, function_name)}}
   args.shift (); args.shift ()
   args.unshift (line)
-  
   
   var max_active = (typeof semaphore.max_active[function_name] != "undefined") ? semaphore.max_active[function_name] : ((typeof semaphore.max_active_default != "undefined") ? semaphore.max_active_default : 10)
   
@@ -27,16 +26,16 @@ function Semaphore (init) {
   }
  }
  
- function complete (line, function_name) {
+ function complete (semaphore_fragment, function_name) {
   run_count[function_name] -= 1
   var subqueue = queue[function_name]; if (subqueue.length == 0) return
-  run_function (subqueue[0][0], function_name, line.index, subqueue[0][1])
+  run_function (subqueue[0][0], function_name, semaphore_fragment.index, subqueue[0][1])
   subqueue.shift ()
  }
  
  function run_function (function_object, function_name, index, args) {
   run_count[function_name] += 1
-  var line = args[0]; line.index = ((typeof index != "undefined") ? index : (run_count[function_name] - 1))
+  var semaphore_fragment = args[0]; semaphore_fragment.index = ((typeof index != "undefined") ? index : (run_count[function_name] - 1))
   function_object.apply (null, args)
  }
 }
