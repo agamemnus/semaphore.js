@@ -15,7 +15,7 @@ function Semaphore (init) {
   var args =  Array.prototype.slice.call(arguments)
   var semaphore_fragment = {complete: function () {complete (this, function_name)}}
   args.shift (); args.shift ()
-  args.unshift (line)
+  args.unshift (semaphore_fragment)
   
   var max_active = (typeof semaphore.max_active[function_name] != "undefined") ? semaphore.max_active[function_name] : ((typeof semaphore.max_active_default != "undefined") ? semaphore.max_active_default : 10)
   
