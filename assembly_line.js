@@ -1,9 +1,10 @@
-function AssemblyLine (init) {
- var max_active = init.max_active
- var assembly_line = this
+function Semaphore (init) {
+ var semaphore = this
+ semaphore.max_active_default = init.max_active_default
+ semaphore.max_active         = init.max_active
  var queue = {}
  var run_count = {}
- assembly_line.add = function () {add.apply(null, arguments)}
+ semaphore.add = function () {add.apply(null, arguments)}
  
  function add (function_name, function_object) {
   if (typeof queue[function_name] == "undefined") {queue[function_name] = []; run_count[function_name] = 0}
@@ -15,6 +16,9 @@ function AssemblyLine (init) {
   var line = {complete: function () {complete (this, function_name)}}
   args.shift (); args.shift ()
   args.unshift (line)
+  
+  
+  var max_active = (typeof semaphore.max_active[function_name] != "undefined") ? semaphore.max_active[function_name] : ((typeof semaphore.max_active_default != "undefined") ? semaphore.max_active_default : 10)
   
   if (run_count[function_name] == max_active) {
    subqueue.push ([function_object, args])
