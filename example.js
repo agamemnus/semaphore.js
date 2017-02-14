@@ -1,15 +1,17 @@
-function make_granolas (semaphore, n, line) {
- console.log ("Granola chef " + (line.index + 1) + " is producing granola " + (n + 1) + ".")
+function make_granolas (semaphore, n, a) {
+ // "a" should be 5.
+ console.log ("Granola chef " + (semaphore.index + 1) + " is producing granola " + (n + 1) + ".")
  setTimeout (function () {
- console.log ("Granola tart chef " + (line.index + 1) + " has produced granola " + (n + 1) + ".")
+ console.log ("Granola tart chef " + (semaphore.index + 1) + " has produced granola " + (n + 1) + ".")
   semaphore.complete ()
  }, Math.random() * 20000 + 5000)
 }
 
-function make_fruit_tarts (semaphore, n, line) {
- console.log ("Fruit tart chef " + (line.index + 1) + " is producing fruit tart " + (n + 1) + ".")
+function make_fruit_tarts (semaphore, n, a) {
+ // "a" should be 6.
+ console.log ("Fruit tart chef " + (semaphore.index + 1) + " is producing fruit tart " + (n + 1) + ".")
  setTimeout (function () {
- console.log ("Fruit tart chef " + (line.index + 1) + " has produced fruit tart " + (n + 1) + ".")
+ console.log ("Fruit tart chef " + (semaphore.index + 1) + " has produced fruit tart " + (n + 1) + ".")
   semaphore.complete ()
  }, Math.random() * 10000 + 2500)
 }
