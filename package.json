@@ -1,6 +1,6 @@
 {
  "name": "semaphore",
- "version" : "1.0.0",
+ "version" : "1.0.1",
  "description": "Semaphore for Javascript -- server-side or client-side.",
  "main": "semaphore.js",
  "dependencies": {},
