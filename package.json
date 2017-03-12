@@ -1,5 +1,6 @@
 {
   "name": "semaphore",
   "main": "semaphore.js",
+  "version" : 1,
   "dependencies": {}
 }
