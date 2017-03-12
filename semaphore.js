@@ -39,3 +39,5 @@ function Semaphore (init) {
   function_object.apply (null, args)
  }
 }
+
+if (module && module.exports) module.exports = Semaphore
