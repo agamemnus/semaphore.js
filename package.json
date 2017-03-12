@@ -1,0 +1,5 @@
+{
+  "name": "semaphore",
+  "main": "semaphore.js",
+  "dependencies": {}
+}
