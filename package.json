@@ -4,5 +4,9 @@
  "description": "Semaphore for Javascript -- server-side or client-side.",
  "main": "semaphore.js",
  "dependencies": {},
- "homepage": "https://github.com/agamemnus/semaphore.js"
+ "homepage": "https://github.com/agamemnus/semaphore.js",
+ "license": "MIT",
+ "repository": {
+  "type": "git"
+ }
 }
