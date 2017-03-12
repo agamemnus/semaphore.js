@@ -1,6 +1,8 @@
 {
-  "name": "semaphore",
-  "main": "semaphore.js",
-  "version" : 1,
-  "dependencies": {}
+ "name": "semaphore",
+ "version" : "1",
+ "description": "Semaphore for Javascript -- server-side or client-side.",
+ "main": "semaphore.js"
+ "dependencies": {}
+ "homepage": "https://github.com/agamemnus/semaphore.js",
 }
