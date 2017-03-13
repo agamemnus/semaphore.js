@@ -2,6 +2,10 @@ semaphore.js
 ================================================================
 A semaphore mechanism with a possible application for the load balancing of resource-intensive asynchronous node.js calls.
 
+# Installation
+```
+npm install https://github.com/agamemnus/semaphore.js
+```
 
 # License
 The MIT License (MIT)
