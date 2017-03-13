@@ -24,6 +24,7 @@ function Semaphore (init) {
   } else {
    run_function (function_object, function_name, undefined, args)
   }
+  return semaphore_fragment
  }
  
  function complete (semaphore_fragment, function_name) {
@@ -40,4 +41,4 @@ function Semaphore (init) {
  }
 }
 
-if (module && module.exports) module.exports = Semaphore
+if ((typeof module === "object") && module.exports) module.exports = Semaphore
