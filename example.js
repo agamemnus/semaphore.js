@@ -27,3 +27,11 @@ for (var i = 0; i < 20; i++) {
  pastry_line.add ("granolas"   , make_granolas   , i, 5)
  pastry_line.add ("fruit_tarts", make_fruit_tarts, i, 6)
 }
+
+// Take.
+//pastry_line.add ("granolas", function (semaphore) {
+//  make_granolas (semaphore, function () {
+//   // "Leave".
+//   semaphore.complete ()
+//  }, 5)
+//})
