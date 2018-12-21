@@ -6,5 +6,5 @@
  "dependencies": {},
  "homepage": "https://github.com/agamemnus/semaphore.js",
  "license": "MIT",
- "repository": {"type": "git", "url": "git+https://github.com/agamemnus/semaphore.js.git"}
+ "repository": {"type": "git", "url": "git+https://github.com/agamemnus/semaphore.js.git#gh-pages"}
 }
